@@ -18,34 +18,34 @@ export default class Form_Events {
     }
 
     goToStep(step, direction = 'next') {
-        // 2) Simplifica esta función para que sean menos líneas. //OTRA FUNCION?33,66,99%
-        let currentStep = step.replace(/^step\-/, '');//N°
+        // 2) Simplifica esta función para que sean menos líneas.
+        let currentStep = step.replace(/^step\-/, '');
         let goToStep = '.step-';
 
-        switch (currentStep) {
-            case '1':
-                goToStep += '2';
-                this.progressBar(66);
-                break;
-            case '2':
-                if ('prev' === direction) {
-                    goToStep += '1';
-                    this.progressBar(33);
-                } else {
-                    goToStep += '3';
-                    this.progressBar(99);
-                }
-                break;
-            case '3':
-                goToStep += '2';
-                this.progressBar(66);
-                break;
-            default:
-                break;
+        let dir = this.checkDirection(direction);
+
+        if ('2' == currentStep) {
+            if ('prev' == dir) {
+                goToStep += '1';
+                this.progressBar(33);
+            } else {
+                goToStep += '3';
+                this.progressBar(99);
+            }
+        } else {
+            goToStep += '2';
+            this.progressBar(66);
         }
+        
         return goToStep;
     }
-
+    checkDirection(d){
+        if ('prev' === d) {
+            return 'prev';
+        } else {
+            return 'next';
+        }
+    }
     formStep(e){
         let $current = $(e.currentTarget);
         let $formStep = $current.parents('.form-step');
