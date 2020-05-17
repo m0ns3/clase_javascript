@@ -21,21 +21,21 @@
     <div class="progress">
       <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">33%</div>
     </div>
-    <form class="form mt-5" onsubmit="formSubmit()">
+    <form id="formulario" class="form mt-5" onsubmit="formSubmit()">
       <!-- STEP 1 -->
       <div class="form-step step-1">
         <h3 class="form-title mb-4">Step 1</h3>
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationCustom01">First name</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+            <input type="text" class="form-control" name="validationCustom01" id="validationCustom01" placeholder="First name" value="Mark" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationCustom02">Last name</label>
-            <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+            <input type="text" class="form-control" name="validationCustom02" id="validationCustom02" placeholder="Last name" value="Otto" required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -46,7 +46,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
               </div>
-              <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+              <input type="text" class="form-control" name="validationCustomUsername" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
               <div class="invalid-feedback">
                 Please choose a username.
               </div>
@@ -56,21 +56,21 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationCustom03">City</label>
-            <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+            <input type="text" class="form-control" name="validationCustom03" id="validationCustom03" placeholder="City" required>
             <div class="invalid-feedback">
               Please provide a valid city.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="validationCustom04">State</label>
-            <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+            <input type="text" class="form-control" name="validationCustom04" id="validationCustom04" placeholder="State" required>
             <div class="invalid-feedback">
               Please provide a valid state.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="validationCustom05">Zip</label>
-            <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+            <input type="text" class="form-control" name="validationCustom05" id="validationCustom05" placeholder="Zip" required>
             <div class="invalid-feedback">
               Please provide a valid zip.
             </div>
@@ -78,7 +78,7 @@
         </div>
         <div class="form-group">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <input class="form-check-input" type="checkbox" value="" name="invalidCheck" id="invalidCheck" required>
             <label class="form-check-label" for="invalidCheck">
               Agree to terms and conditions
             </label>
@@ -101,7 +101,7 @@
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Options</label>
               </div>
-              <select class="custom-select form-control" id="maritalStatus" required>
+              <select class="custom-select form-control" name="maritalStatus" id="maritalStatus" required>
                 <option selected>Choose...</option>
                 <option value="single">Single</option>
                 <option value="spouse">Spouse</option>
@@ -118,7 +118,7 @@
               <div class="input-group-prepend">
                 <label class="input-group-text" for="childGroupSelectUnder18">Options</label>
               </div>
-              <select class="custom-select form-control" id="childGroupSelectUnder18" required>
+              <select class="custom-select form-control"  name="childGroupSelectUnder18" id="childGroupSelectUnder18" required>
                 <option value="">None</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -140,21 +140,21 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="childName">First name</label>
-            <input type="text" class="form-control" id="childName" placeholder="First name" value="Mark Jr." required>
+            <input type="text" class="form-control" name="childName" id="childName" placeholder="First name" value="Mark Jr." required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-4 mb-3">
             <label for="childLastName">Last name</label>
-            <input type="text" class="form-control" id="childLastName" placeholder="Last name" value="Otto" required>
+            <input type="text" class="form-control" name="childLastName" id="childLastName" placeholder="Last name" value="Otto" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="childBirthdate">Birthdate</label>
-            <input type="text" class="form-control" id="childBirthdate" placeholder="mm/dd/yyyy" value="" required>
+            <input type="text" class="form-control" name="childBirthdate" id="childBirthdate" placeholder="mm/dd/yyyy" value="" required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -175,7 +175,7 @@
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Options</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01" required>
+              <select class="custom-select" name="inputGroupSelect01" id="inputGroupSelect01" required>
                 <option selected>Choose...</option>
                 <option value="Completed Some High School">Completed Some High School</option>
                 <option value="High School Graduate or GED">High School Graduate or GED</option>
@@ -191,7 +191,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationCustom02">Enrolled in college or technical school?</label>
-            <select class="custom-select" id="inputGroupSelect01" required>
+            <select class="custom-select" name="inputGroupSelect01" id="inputGroupSelect01" required>
               <option selected>Choose...</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -206,7 +206,7 @@
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Options</label>
               </div>
-              <select class="custom-select" id="inputGroupSelect01" required>
+              <select class="custom-select" name="inputGroupSelect01" id="inputGroupSelect01" required>
                 <option selected>Choose...</option>
                 <option value="Not Employed Outside the Home">Not Employed Outside the Home</option>
                 <option value="Full-time">Full-time</option>
@@ -223,14 +223,14 @@
         <div class="form-row">
           <div class="col-md-3 mb-3">
             <label for="workZipCode">Work Zip Code</label>
-            <input type="text" class="form-control" id="workZipCode" placeholder="Zip" required>
+            <input type="text" class="form-control" name="workZipCode" id="workZipCode" placeholder="Zip" required>
             <div class="invalid-feedback">
               Please provide a valid zip.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="workState">Work State</label>
-            <input type="text" class="form-control" id="workState" placeholder="State" required>
+            <input type="text" class="form-control" name="workState" id="workState" placeholder="State" required>
             <div class="invalid-feedback">
               Please provide a valid state.
             </div>
@@ -241,7 +241,7 @@
               <div class="input-group-prepend">
                 <label class="input-group-text" for="indGroupSelect">Options</label>
               </div>
-              <select class="custom-select" id="indGroupSelect">
+              <select class="custom-select" name="indGroupSelect" id="indGroupSelect">
                 <option selected>Choose...</option>
                 <!-- TODO: SIMPLIFY THIS GETTING THE OPTIONS FROM AN OBJECT IN SCRIPT.JS -->
                 <option value="Agriculture">Agriculture</option>
@@ -305,7 +305,7 @@
         </div>
         <div class="form-group">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="privacyCheck" required>
+            <input class="form-check-input" type="checkbox" value="" name="privacyCheck"  id="privacyCheck" required>
             <label class="form-check-label" for="privacyCheck">
               Agree to privacy terms and conditions
             </label>
