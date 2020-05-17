@@ -5,6 +5,7 @@ export default class Form {
 
     constructor() {
         this.formEvents = new FormEvents();
+        this.formValidation = new FormValidation();
         this.initSendFormAction();
     }
 
@@ -19,8 +20,8 @@ export default class Form {
         // la API retorna un JSON con el id del usuario creado y la info guardada.
         // Para mas info ver en https://reqres.in
         
-        
-        const data = new FormData(document.querySelector('form'));
+        let formulario = document.querySelector('form');
+        const data = new FormData(formulario);
 
         fetch('https://reqres.in/api/users', {
             method: 'POST',
@@ -34,10 +35,10 @@ export default class Form {
                 let result = document.querySelector('.modal-body');
                 result.innerText = '';
                 result.innerText = 'El usuario '+ rp.id+' se dió de alta con éxito';
+                
             });
             
         });
-
 
     }
 

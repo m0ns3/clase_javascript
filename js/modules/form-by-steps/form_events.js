@@ -7,9 +7,14 @@ export default class Form_Events {
     initPrevNextButtons() {
         let $prevButton = $('.js-previous');
         let $nextButton = $('.js-next');
+        let $finishButton = $('.js-finish');
         
         $prevButton.click(this.previousAction.bind(this));
         $nextButton.click(this.nextAction.bind(this));
+        $finishButton.click(this.preventDefaultSend.bind(this));
+    }
+    preventDefaultSend(e){
+        e.preventDefault();
     }
 
     initSendFormEvent(callback) {
