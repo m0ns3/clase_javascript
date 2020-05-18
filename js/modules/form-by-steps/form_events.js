@@ -2,21 +2,34 @@ export default class Form_Events {
 
     constructor() {
         this.initPrevNextButtons();
+        this.initselectChild();
     }
 
     initPrevNextButtons() {
         let $prevButton = $('.js-previous');
         let $nextButton = $('.js-next');
-        let $finishButton = $('.js-finish');
         
         $prevButton.click(this.previousAction.bind(this));
         $nextButton.click(this.nextAction.bind(this));
-        $finishButton.click(this.preventDefaultSend.bind(this));
-    }
-    preventDefaultSend(e){
-        e.preventDefault();
     }
 
+initselectChild(){
+    $("#childGroupSelectUnder18").change(function(){
+        let cant = $("#childGroupSelectUnder18").val();
+        let cantidad = parseInt(cant);
+
+
+        if (''!= cant) {
+            for (let i = 0; i < cantidad; i++) {
+                $('.childrenData').clone().insertAfter('.children');
+            }
+        }else{
+            $('.childrenData').css('display', 'none');
+            
+        }
+
+    });
+}
     initSendFormEvent(callback) {
         let $sendForm = $('.js-sendForm');
         $sendForm.click(callback);
@@ -84,5 +97,8 @@ export default class Form_Events {
         $progressBar.css('width', percent + '%')
                     .html(percent + '%');
     }
-    
+
+    showChild(){
+        console.log('hijos');
+    }
 }
